@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <section>
+    <!-- <section>
         <h2 id="heading-element">Hey, People This is element will be hide when you click delete button using the instruction</h2>
         <input type="text" name="" id="text" placeholder="Please type delete">
         <button id="delete-element" disabled>Delete</button>
@@ -16,7 +16,28 @@
         <h1 id="cng-heading">Change with the button</h1>
         <input type="text" name="" id="new-text">
         <button id="change-element">Change</button>
+    </section> -->
+    <section>
+        <h1 id="hide">This is delete button like GitHub</h1>
+        <input type="text" name="" id="text" placeholder="Please Type delete and work">
+        <button id="btn-change" disabled>Delete</button>
     </section>
     <script src="./js/github.js"></script>
+    <script>
+        document.getElementById('text').addEventListener('keyup', function(event){
+            const deleteButton = event.target.value;
+            const btnELement = document.getElementById('btn-change')
+            if (deleteButton === 'delete') {
+                btnELement.removeAttribute('disabled')
+            }else{
+                btnELement.setAttribute('disabled', true)
+            }
+        })
+
+        document.getElementById('btn-change').addEventListener('click', function(){
+            const hideElement = document.getElementById('hide')
+            hideElement.style.display = "none";
+        })
+    </script>
 </body>
 </html>
