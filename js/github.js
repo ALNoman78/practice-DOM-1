@@ -14,3 +14,16 @@ document.getElementById('delete-element').addEventListener('click', function(){
     const removeElement = document.getElementById('heading-element');
     removeElement.style.display = "none";
 })
+
+
+// section -02 
+
+document.getElementById('change-element').addEventListener('click', function(){
+    const inputElement = document.getElementById ('new-text');
+    const textElement = inputElement.value
+    console.log(textElement);
+
+    const changeHeaingElement = document.getElementById('cng-heading');
+    changeHeaingElement.innerText = textElement;
+    inputElement.value = "";
+})

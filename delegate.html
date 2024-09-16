@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegate Event</title>
+</head>
+<body>
+    <section>
+        <h1>Delegate Event</h1>
+        <ul id="item">
+            <li class="li-item">Lorem ipsum dolor sit.</li>
+            <li class="li-item">Voluptates sed eum debitis!</li>
+            <li class="li-item">Hic praesentium tempora incidunt.</li>
+            <li class="li-item">Accusamus consequuntur repellendus deleniti.</li>
+            <li class="li-item">Beatae mollitia harum earum.</li>
+            <li class="li-item">Necessitatibus impedit esse doloribus.</li>
+        </ul>
+        <button id="add-me">Add</button>
+    </section>
+    <script>
+        // const items = document.getElementsByClassName('li-item')
+        // for (const item of items) {
+        //     item.addEventListener('click', function(event){
+        //         event.target.parentNode.removeChild(event.target)
+        //     })
+        // }
+        document.getElementById('item').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+        })
+        document.getElementById('add-me').addEventListener("click", function(){
+            const createEL = document.createElement("li")
+            createEL.innerText  = "New item Added by Button"
+            createEL.classList.add('li-item')
+            console.log(createEL);
+            const addElement = document.getElementById('item')
+            addElement.appendChild(createEL)
+        })
+    </script>
+</body>
+</html>
