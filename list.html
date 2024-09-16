@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>I have to delegate all items added and remove using add event listener</h2>
+    <section id="section">
+        <h1>This is list items</h1>
+        <ul id="item">
+            <li class="li-items">Lorem, ipsum.</li>
+            <li class="li-items">A, eum!</li>
+            <li class="li-items">Autem, voluptatum.</li>
+            <li class="li-items">Aliquid, dolorem!</li>
+            <li class="li-items">Quis, itaque!</li>
+            <li class="li-items">Unde, ab.</li>
+        </ul>
+        <button id="add-me">Added</button>
+    </section>
+    <script>
+        document.getElementById('item').addEventListener('click', function(event){
+            event.target.parentNode.removeChild(event.target)
+        })
+        document.getElementById('add-me').addEventListener('click', function(){
+            const items = document.getElementById("item")
+            const newItems = document.createElement('li')
+            newItems.innerText = "Added New items"
+            newItems.classList.add("li-items")
+            items.appendChild(newItems)
+        })
+    </script>
+</body>
+</html>
